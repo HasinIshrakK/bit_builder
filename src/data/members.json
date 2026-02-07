@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "team": "BitBuilder",
+    "name": "MD. HASIN ISHRAK KHAN",
+    "role": "Team Leader",
+    "email": "hasinishrakk@gmail.com",
+    "discord": "md.hasinishrakkhan",
+    "phone": "01518938360",
+    "image": "https://i.ibb.co.com/Wp5nTXZ4/h.jpg",
+    "bio": "Team Leader of BitBuilder.",
+    "skills": ["Leadership", "Project Planning"],
+    "socials": {
+      "facebook": "https://facebook.com/muhammadhasinishrak"
+    }
+  },
+  {
+    "id": "2",
+    "team": "BitBuilder",
+    "name": "Ahmed Abrar Zayad",
+    "role": "Team Member",
+    "email": "ahmedabrarzayad@gmail.com",
+    "discord": "ahmedabrar",
+    "phone": "01768531042",
+    "image": "https://i.ibb.co.com/hxy9n78v/a.jpg",
+    "bio": "Team member of BitBuilder.",
+    "skills": ["React", "JavaScript", "UI Development"],
+    "socials": {
+      "facebook": "https://www.facebook.com/share/1Bb4zAdKaq/"
+    }
+  },
+  {
+    "id": "3",
+    "team": "BitBuilder",
+    "name": "Mahfuzur Rahman",
+    "role": "Team Member",
+    "email": "ripon301252@gmail.com",
+    "discord": "mahfuzurrahman_54734",
+    "phone": "01626607121",
+    "image": "https://i.ibb.co.com/9Ht9r0PV/m.jpg",
+    "bio": "Team member of BitBuilder.",
+    "skills": ["Node.js", "Express", "MongoDB"],
+    "socials": {
+      "facebook": "https://www.facebook.com/profile.php?id=100089627922381"
+    }
+  },
+  {
+    "id": "4",
+    "team": "BitBuilder",
+    "name": "Amina Akther Asha",
+    "role": "Team Member",
+    "email": "ashaamina91@gmail.com",
+    "discord": "amina.akther.asha",
+    "phone": "01621829947",
+    "image": "https://i.ibb.co.com/hxy9n78v/a.jpg",
+    "bio": "Team member of BitBuilder.",
+    "skills": ["UI/UX", "Figma", "Design"],
+    "socials": {
+      "facebook": "https://www.facebook.com/rondhonu.satrong.169"
+    }
+  },
+  {
+    "id": "5",
+    "team": "BitBuilder",
+    "name": "Faisal",
+    "role": "Team Member",
+    "email": "itsfaisalhossen@gmail.com",
+    "discord": "faisal_84856",
+    "phone": "01775352158",
+    "image": "https://i.ibb.co.com/NntYpHQW/f.jpg",
+    "bio": "Team member of BitBuilder.",
+    "skills": ["Frontend", "Backend", "Problem Solving"],
+    "socials": {
+      "facebook": "https://www.facebook.com/itsfaisalhossen/"
+    }
+  },
+  {
+    "id": "6",
+    "team": "BitBuilder",
+    "name": "Tahmid Ahmed",
+    "role": "Team Member",
+    "email": "tahmid7282@gmail.com",
+    "discord": "tahmidman20",
+    "phone": "01937508287",
+    "image": "https://i.ibb.co.com/S4NTH5xh/t.jpg",
+    "bio": "Team member of BitBuilder.",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "socials": {
+      "facebook": "https://www.facebook.com/share/1DUQsxiiqJ/"
+    }
+  }
+]
