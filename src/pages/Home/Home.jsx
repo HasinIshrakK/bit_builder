@@ -1,12 +1,4 @@
-function Home() {
-
-  return (
-    <>
-      <h1>
-        This is Home
-      </h1>
-    </>
-  )
-}
-
-export default Home
+const Home = () => {
+  return <div className="mt-24">Home</div>;
+};
+export default Home;
