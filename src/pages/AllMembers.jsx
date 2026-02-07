@@ -6,7 +6,7 @@ export default function AllMembers() {
     <div className="mx-auto max-w-6xl px-4 py-10">
       {/* Header */}
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-purple-400">
+        <h1 className="text-3xl md:text-4xl font-bold  bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
           BitBuilder Team Members
         </h1>
         <p className="mt-2 text-gray-300">

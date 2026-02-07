@@ -50,7 +50,7 @@ const AllProjects = () => {
 
   return (
     <div className="min-h-screen">
-      <h2 className="text-center text-3xl font-semibold  text-purple-400 py-8">
+      <h2 className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent py-8">
         Team Projects
       </h2>
 

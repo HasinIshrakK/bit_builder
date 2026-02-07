@@ -6,12 +6,15 @@ import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
 import AllMembers from "../pages/AllMembers";
 import MemberDetails from "../pages/MemberDetails";
 import Contacts from "../pages/Contacts/Contacts";
+import Error from "../pages/Error/Error";
+import ErrorElement from "../pages/Error/ErrorElement";
 
 export const router = createBrowserRouter(
     [
         {
             path: "/",
             Component: RootLayout,
+            errorElement: ErrorElement,
             children: [
                 {
                     index: true,
@@ -36,6 +39,10 @@ export const router = createBrowserRouter(
                 {
                     path: "/contact",
                     Component: Contacts
+                },
+                {
+                    path: "/*",
+                    Component: Error
                 }
             ]
         }
