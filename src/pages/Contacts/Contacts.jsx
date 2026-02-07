@@ -1,11 +1,11 @@
 export default function Contacts() {
 
     return (
-        <div>
+        <div className="py-10">
             {/* Header */}
             <div className="mb-10 text-center">
-                <h1 className="text-3xl font-bold g-linear-to-r text-purple-300">
-                    Contact Info
+                <h1 className="text-3xl font-bold g-linear-to-r text-purple-400">
+                    Team Contact Info
                 </h1>
                 <p className="mt-2 text-gray-400">
                     Meet our awesome team and connect with them.

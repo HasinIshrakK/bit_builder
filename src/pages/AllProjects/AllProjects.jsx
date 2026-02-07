@@ -49,18 +49,18 @@ const AllProjects = () => {
   }, []);
 
   return (
-    <div className="bg-[#1C072E] min-h-screen">
-      <h2 className="text-center text-2xl font-semibold  text-purple-400 py-8">
+    <div className="min-h-screen">
+      <h2 className="text-center text-3xl font-semibold  text-purple-400 py-8">
         Team Projects
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3">
         {projects.map((project) => (
-          <div key={project._id} className="card bg-base-100  h-94 shadow-sm">
+          <div key={project._id} className="card bg-base-100 h-94 shadow-sm">
             <figure>
               <img src={project.image} alt={project.title} />
             </figure>
-            <div className="card-body bg-black">
+            <div className="card-body bg-[#1C072E]">
               <h2 className="card-title text-white">{project.title}</h2>
               <p className="text-gray-400">{project.description}</p>
               <div className="card-actions justify-end">

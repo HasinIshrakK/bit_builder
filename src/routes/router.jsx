@@ -10,32 +10,32 @@ import Contacts from "../pages/Contacts/Contacts";
 export const router = createBrowserRouter(
     [
         {
-            path:"/",
-            Component:RootLayout,
-            children:[
+            path: "/",
+            Component: RootLayout,
+            children: [
                 {
-                    index:true,
-                    Component:Home
+                    index: true,
+                    Component: Home
                 },
                 {
-                    path:"/projects",
-                    Component:AllProjects
+                    path: "members",
+                    element: <AllMembers />,
                 },
                 {
-                    path:"/projects/:id",
-                    Component:ProjectDetails
+                    path: "members/:id",
+                    element: <MemberDetails />,
                 },
-      {
-        path: "members",
-        element: <AllMembers />,
-      },
-      {
-        path: "members/:id",
-        element: <MemberDetails />,
-      },
                 {
-                    path:"/contact",
-                    Component:Contacts
+                    path: "/projects",
+                    Component: AllProjects
+                },
+                {
+                    path: "/projects/:id",
+                    Component: ProjectDetails
+                },
+                {
+                    path: "/contact",
+                    Component: Contacts
                 }
             ]
         }
