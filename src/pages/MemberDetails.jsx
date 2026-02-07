@@ -13,7 +13,7 @@ export default function MemberDetails() {
         </h2>
         <Link
           to="/members"
-          className="mt-4 inline-block font-semibold text-[var(--primary)] underline"
+          className="mt-4 inline-block font-semibold underline"
         >
           ⬅ Back to Members
         </Link>
@@ -22,7 +22,7 @@ export default function MemberDetails() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
+    <div className="mx-auto max-w-3xl px-4 py-10 bg-[#1c072e]">
       {/* Back */}
       <Link
         to="/members"
@@ -32,7 +32,7 @@ export default function MemberDetails() {
       </Link>
 
       {/* Card */}
-      <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-[#1c072e] shadow-sm">
         {/* Header */}
         <div className="bg-gray-50 p-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
@@ -46,7 +46,7 @@ export default function MemberDetails() {
               <h1 className="text-2xl font-bold text-[var(--primary)]">
                 {member.name}
               </h1>
-              <p className="mt-1 text-gray-700">{member.role}</p>
+              <p className="mt-1 text-gray-400">{member.role}</p>
               <p className="mt-1 text-sm text-gray-600">
                 Team: <span className="font-semibold">{member.team}</span>
               </p>
@@ -59,27 +59,21 @@ export default function MemberDetails() {
           {/* Bio */}
           <div>
             <h3 className="text-sm font-semibold text-[var(--primary)]">Bio</h3>
-            <p className="mt-2 text-sm text-gray-700">{member.bio}</p>
+            <p className="mt-2 text-sm text-gray-400">{member.bio}</p>
           </div>
 
           {/* Contact */}
-          <div className="mt-6 grid gap-3 text-sm text-gray-700 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 text-sm text-gray-400 sm:grid-cols-2">
             <p>
-              <span className="font-semibold text-[var(--primary)]">
-                Email:
-              </span>{" "}
+              <span className="font-semibold text-gray-400">Email:</span>{" "}
               {member.email}
             </p>
             <p>
-              <span className="font-semibold text-[var(--primary)]">
-                Discord:
-              </span>{" "}
+              <span className="font-semibold text-gray-400">Discord:</span>{" "}
               {member.discord}
             </p>
             <p>
-              <span className="font-semibold text-[var(--primary)]">
-                Phone:
-              </span>{" "}
+              <span className="font-semibold text-gray-400">Phone:</span>{" "}
               {member.phone}
             </p>
           </div>
@@ -114,7 +108,7 @@ export default function MemberDetails() {
               href={member.socials.facebook}
               target="_blank"
               rel="noreferrer"
-              className="w-full rounded-xl bg-[var(--primary)] px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
+              className="w-full border-1 border-white rounded-xl bg-[var(--primary)] px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
             >
               Facebook Profile
             </a>
