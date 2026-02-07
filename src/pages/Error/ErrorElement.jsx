@@ -1,20 +1,19 @@
 import { Link } from "react-router";
 
-const Error = () => {
+const ErrorElement = () => {
   return (
     <div className="container flex justify-center items-center min-h-screen px-6 py-12 mx-auto">
       <div className="flex flex-col sm:items-center">
         <p className="text-sm font-medium text-pink-500 dark:text-pink-400">
-          404 error
+          Oops!
         </p>
 
         <h1 className="mt-3 text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
-          We can’t find that page
+          Something went wrong
         </h1>
 
         <p className="mt-4 text-gray-500 dark:text-gray-400">
-          Sorry, the page you are looking for doesn&apos;t exist or has been
-          moved.
+          Sorry, the page couldn't be loaded
         </p>
 
         <div className="flex items-center mt-6 gap-x-3">
@@ -36,16 +35,14 @@ const Error = () => {
 
             <span>Go back</span>
           </button>
-
           <Link to="/">
-            <button className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-fuchsia-600  rounded-lg shrink-0 sm:w-auto hover:bg-pink-600 dark:hover:bg-pink-500 dark:bg-fuchsia-600">
+            <button className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-fuchsia-600 rounded-lg shrink-0 sm:w-auto hover:bg-pink-600 dark:hover:bg-pink-500 dark:bg-fuchsia-600">
               Take me home
             </button>
           </Link>
-
         </div>
       </div>
     </div>
   );
 };
-export default Error;
+export default ErrorElement;
