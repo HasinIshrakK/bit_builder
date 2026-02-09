@@ -5,62 +5,30 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
 
-  const projectsData = [
-    {
-      _id: "1",
-      title: "Team Portfolio Website",
-      description:
-        "A collaborative portfolio website showcasing team members, projects, and skills with modern responsive design.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: "React,Firebase,Tailwind",
-      createdAt: "2026-01-01",
-    },
-    {
-      _id: "2",
-      title: "E-commerce Web App",
-      description:
-        "A full-stack e-commerce platform with product listing, cart system, and secure authentication for smooth online shopping.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: "React,Firebase,Tailwind",
-      createdAt: "2026-01-05",
-    },
-    {
-      _id: "3",
-      title: "Task Management System",
-      description:
-        "A productivity web app to manage daily tasks, set priorities, and track progress with an intuitive user interface.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: "React,Firebase,Tailwind",
-      createdAt: "2026-01-10",
-    },
-  ];
-  useEffect(() => {
-    const projectDetails = projectsData.find((data) => data._id === id);
-    setProject(projectDetails);
-  }, [id]);
+  
+  useEffect(()=>{
+    
+    fetch(`https://bit-builder-server.vercel.app/projects/${id}`)
+    .then((res) => res.json())
+    .then((data) => setProject(data)) 
+    .catch((err) => console.error(err));
 
-  if (!project) return <p className="text-center text-2xl">Loading....</p>;
+  },[id])
+
+  if (!project) return <p className='text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen'>Loading....</p>
 
   return (
-    <div className=" flex items-center justify-center p-6">
-      <div className="max-w-5xl w-full bg-[#140424] rounded-xl shadow-lg p-6 grid md:grid-cols-2 gap-8 items-center">
-        {/* Left - Image */}
-        <div>
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-auto rounded-lg object-cover"
-          />
-        </div>
+    <div className=" flex items-center justify-center p-6 min-h-screen">
+  <div className="max-w-5xl w-full bg-[#140424] rounded-xl shadow-lg p-6 grid md:grid-cols-2 gap-8 items-center">
+
+    {/* Left - Image */}
+    <div>
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-auto rounded-lg object-cover"
+      />
+    </div>
 
         {/* Right - Content */}
         <div>

@@ -3,63 +3,40 @@ import { Link } from "react-router";
 
 const AllProjects = () => {
   const [projects, setProjects] = useState([]);
-
-  const projectsData = [
-    {
-      _id: "1",
-      title: "Team Portfolio Website",
-      description:
-        "A collaborative portfolio website showcasing team members, projects, and skills with modern responsive design.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: ["React", "Tailwind", "Node.js"],
-      createdAt: "2026-01-01",
-    },
-    {
-      _id: "2",
-      title: "E-commerce Web App",
-      description:
-        "A full-stack e-commerce platform with product listing, cart system, and secure authentication for smooth online shopping.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: ["React", "Express", "MongoDB"],
-      createdAt: "2026-01-05",
-    },
-    {
-      _id: "3",
-      title: "Task Management System",
-      description:
-        "A productivity web app to manage daily tasks, set priorities, and track progress with an intuitive user interface.",
-      image:
-        "https://i.pinimg.com/736x/53/fe/47/53fe47e0a3648d9492ccc8370ab42066.jpg",
-      liveLink: "#",
-      github: "#",
-      techStack: ["React", "Firebase", "Tailwind"],
-      createdAt: "2026-01-10",
-    },
-  ];
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const limit = 6;
 
   useEffect(() => {
-    setProjects(projectsData);
-  }, []);
+    fetch(
+      `https://bit-builder-server.vercel.app/projects?page=${page}&limit=${limit}&sortBy=createdAt&order=desc`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data.data)
+        setLoading(false);
+        setTotalPages(data.totalPages)
+      })
+
+      .catch((err) => console.error(err));
+  }, [page]);
+
+  if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen">Loading projects...</p>;
 
   return (
-    <div className="bg-[#1C072E] min-h-screen">
-      <h2 className="text-center text-2xl font-semibold  text-purple-400 py-8">
+    <div className="min-h-screen">
+      <h2 className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent py-8">
         Team Projects
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3">
         {projects.map((project) => (
-          <div key={project._id} className="card bg-base-100  h-94 shadow-sm">
+          <div key={project._id} className="card bg-base-100 h-94 shadow-sm">
             <figure>
               <img src={project.image} alt={project.title} />
             </figure>
-            <div className="card-body bg-black">
+            <div className="card-body bg-[#1C072E]">
               <h2 className="card-title text-white">{project.title}</h2>
               <p className="text-gray-400">{project.description}</p>
               <div className="card-actions justify-end">
@@ -73,6 +50,32 @@ const AllProjects = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex gap-2 justify-center py-8">
+        <button
+        disabled = {page === 1}
+        onClick={()=> setPage(page - 1)}
+         className="px-4 py-2 bg-purple-600 text-white rounded disabled:opacity-40">
+          Prev
+        </button>
+        {[...Array(totalPages).keys()].map((num)=>(
+          <button
+          key={num}
+          onClick={()=> setPage(num +1)}
+          className={`px-4 py-2 rounded ${
+            page === num +1?"bg-fuchsia-600 text-white":"bg-gray-700 text-gray-500"
+          }`} 
+          >
+            {num + 1}
+          </button>
+        ))}
+        <button 
+        disabled={page === totalPages}
+        onClick={()=> setPage(page + 1)}
+        className="px-4 py-2 bg-purple-600 text-white rounded disabled:opacity-40"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

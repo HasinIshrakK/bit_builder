@@ -8,7 +8,7 @@ export default function MemberDetails() {
   if (!member) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-10">
-        <h2 className="text-2xl font-bold text-[var(--primary)]">
+        <h2 className="text-2xl font-bold text-(--primary)">
           Member not found
         </h2>
         <Link
@@ -22,11 +22,11 @@ export default function MemberDetails() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 bg-[#1c072e]">
+    <div className="mx-auto max-w-3xl px-4 py-10">
       {/* Back */}
       <Link
         to="/members"
-        className="text-sm font-semibold text-[var(--primary)] hover:underline"
+        className="text-sm font-semibold text-gray-500 hover:underline"
       >
         ⬅ Back to Members
       </Link>
@@ -43,7 +43,7 @@ export default function MemberDetails() {
             />
 
             <div>
-              <h1 className="text-2xl font-bold text-[var(--primary)]">
+              <h1 className="text-2xl font-bold text-(--primary)">
                 {member.name}
               </h1>
               <p className="mt-1 text-gray-400">{member.role}</p>
@@ -58,7 +58,7 @@ export default function MemberDetails() {
         <div className="p-6">
           {/* Bio */}
           <div>
-            <h3 className="text-sm font-semibold text-[var(--primary)]">Bio</h3>
+            <h3 className="text-sm font-semibold text-(--primary)">Bio</h3>
             <p className="mt-2 text-sm text-gray-400">{member.bio}</p>
           </div>
 
@@ -80,14 +80,14 @@ export default function MemberDetails() {
 
           {/* Skills */}
           <div className="mt-6">
-            <h3 className="text-sm font-semibold text-[var(--primary)]">
+            <h3 className="text-sm font-semibold text-(--primary)">
               Skills
             </h3>
             <div className="mt-3 flex flex-wrap gap-2">
               {member.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-[var(--primary)]"
+                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-(--primary)"
                 >
                   {skill}
                 </span>
@@ -99,7 +99,7 @@ export default function MemberDetails() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={`mailto:${member.email}`}
-              className="w-full rounded-xl border border-[var(--primary)] bg-white px-4 py-2 text-center text-sm font-semibold text-[var(--primary)] transition hover:bg-gray-50"
+              className="w-full rounded-xl border border-(--primary) bg-white px-4 py-2 text-center text-sm font-semibold text-(--primary) transition hover:bg-gray-50"
             >
               Email
             </a>
@@ -108,7 +108,7 @@ export default function MemberDetails() {
               href={member.socials.facebook}
               target="_blank"
               rel="noreferrer"
-              className="w-full border-1 border-white rounded-xl bg-[var(--primary)] px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
+              className="w-full border border-white rounded-xl bg-(--primary) px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
             >
               Facebook Profile
             </a>

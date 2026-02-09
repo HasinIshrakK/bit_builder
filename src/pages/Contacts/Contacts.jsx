@@ -1,88 +1,78 @@
+import { useEffect, useState } from "react";
+import useAxios from "../../hooks/useAxios"
+
 export default function Contacts() {
+    const [members, setMembers] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const axiosInstance = useAxios();
+
+    useEffect(() => {
+        const fetchMembers = async () => {
+            try {
+                const response = await axiosInstance.get("/members");
+                setMembers(response.data.data);
+            } catch (err) {
+                console.error("Failed to fetch members:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMembers();
+    }, [axiosInstance, members]);
+
+    {
+        loading && <span className="loading loading-spinner text-error"></span>
+    }
 
     return (
-        <div>
+        <div className="min-h-screen py-16 px-4 text-white">
             {/* Header */}
-            <div className="mb-10 text-center">
-                <h1 className="text-3xl font-bold g-linear-to-r text-purple-300">
-                    Contact Info
+            <div className="mb-16 text-center">
+                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    Team Contact Info
                 </h1>
-                <p className="mt-2 text-gray-400">
-                    Meet our awesome team and connect with them.
+                <p className="mt-4 text-gray-400 max-w-md mx-auto">
+                    Awesome developers are working together to build the future.
                 </p>
             </div>
-            {/* Membar cards */}
-            <div className="items-center flex justify-center">
-                <div className="grid gap-3 md:gap-0 grid-cols-1">
-                    <div className="flex justify-center items-center gap-2 md:-ml-32">
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="https://avatars.githubusercontent.com/u/88761193?v=4"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
+
+            {/* Grid Container */}
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                {!loading && members.map((member, idx) => (
+                    <div
+                        key={idx}
+                        className="group flex items-center gap-6 p-4 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+                    >
+                        {/* Diamond Image with Glow */}
+                        <div className="relative shrink-0">
+                            <div className="absolute inset-0 bg-purple-500 blur-lg opacity-0 group-hover:opacity-40 transition-opacity" />
+                            <div className="relative w-24 h-24 md:w-32 md:h-32 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)] border-2 border-purple-500/30">
+                                <img src={member.image} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            </div>
                         </div>
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">Ahmed Abrar Zayad</h1>
-                            <p>
-                                Email: ahmedabrarzayad@gmail.com
-                            </p>
-                        </div>
-                    </div> <div className="flex justify-center items-center gap-2 md:-mr-32 md:-mt-10 text-right">
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">Mahfuzur Rahman</h1>
-                            <p>
-                                Email: ripon301252@gmail.com
-                            </p>
-                        </div>
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="https://avatars.githubusercontent.com/u/93132951?v=4"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
-                        </div>
-                    </div>  <div className="flex justify-center items-center gap-2 md:-ml-32 md:-mt-10">
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="/image.jpg"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">Amina Akther Asha</h1>
-                            <p>
-                                Email: ashaamina91@gmail.com
-                            </p>
-                        </div>
-                    </div>  <div className="flex justify-center items-center gap-2 md:-mr-32 md:-mt-10 text-right">
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">Faisal</h1>
-                            <p>
-                                Email: itsfaisalhossen@gmail.com
-                            </p>
-                        </div>
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="https://avatars.githubusercontent.com/u/108367521?v=4"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
-                        </div>
-                    </div>  <div className="flex justify-center items-center gap-2 md:-ml-32 md:-mt-10">
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="https://avatars.githubusercontent.com/u/218386621?v=4"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">Tahmid Ahmed</h1>
-                            <p>
-                                Email: tahmid7282@gmail.com
-                            </p>
-                        </div>
-                    </div>  <div className="flex justify-center items-center gap-2 md:-mr-32 md:-mt-10 text-right">
-                        <div className="bg-purple-900 rounded-2xl p-4">
-                            <h1 className="text-2xl">MD. HASIN ISHRAK KHAN</h1>
-                            <p>
-                                Email: hasinishrakk@gmail.com
-                            </p>
-                        </div>
-                        <div className="w-24 md:w-40 h-24 md:h-40 overflow-hidden [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-                            <img src="https://avatars.githubusercontent.com/u/219306826?v=4"
-                                alt="Profile Pic" className="w-full h-full object-cover" />
+
+                        {/* Info */}
+                        <div className="flex flex-col">
+                            <h2 className="text-xl md:text-2xl font-semibold text-purple-100 group-hover:text-white">
+                                {member.name}
+                            </h2>
+                            <a
+                                href={`mailto:${member.email}`}
+                                className="text-sm text-gray-400 hover:text-purple-400 transition-colors break-all"
+                            >
+                                {member.email}
+                            </a>
+                            <div className="mt-3 flex gap-2">
+                                <span className="px-3 py-1 text-[10px] uppercase tracking-wider bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30">
+                                    {member.role}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }

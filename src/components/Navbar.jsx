@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Mobile Logo */}
         <div className="md:hidden text-white text-2xl font-bold">
-          <span className="text-purple-400 uppercase">Bit builder</span>
+          <span className="bg-linear-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent uppercase">Bit builder</span>
         </div>
 
         {/* Desktop Layout */}
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex items-center justify-center">
             <Link
               to={"/"}
-              className="flex items-center justify-center rounded-full mt-6 font-bold text-2xl lg:text-3xl text-transparent bg-clip-text bg-linear-to-r from-fuchsia-400 to-blue-500  mb-4 md:mb-6 uppercase"
+              className="flex items-center justify-center rounded-full mt-6 font-bold text-2xl lg:text-3xl bg-linear-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent mb-4 md:mb-6 uppercase"
             >
               Bit builder
             </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `relative text-sm transition ${
                     isActive
-                      ? "text-purple-400"
+                      ? "text-pink-400"
                       : "text-gray-200 hover:text-purple-300"
                   }`
                 }

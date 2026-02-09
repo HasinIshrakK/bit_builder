@@ -3,11 +3,11 @@ import members from "../data/members.json";
 
 export default function AllMembers() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 bg-gray-900">
+    <div className="mx-auto max-w-6xl px-4 py-10">
       {/* Header */}
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-white">
-          BitBuilder Team Members
+        <h1 className="text-3xl md:text-4xl font-bold  bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          The Dream Team
         </h1>
         <p className="mt-2 text-gray-300">
           Meet our awesome team and explore each member profile.
@@ -45,7 +45,7 @@ export default function AllMembers() {
               {m.skills.slice(0, 3).map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-[var(--primary)]"
+                  className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-(--primary)"
                 >
                   {skill}
                 </span>
@@ -72,7 +72,7 @@ export default function AllMembers() {
             <div className="mt-6 flex gap-3">
               <Link
                 to={`/members/${m.id}`}
-                className="w-full rounded-xl border-1 border-amber-50 px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
+                className="w-full rounded-xl border border-amber-50 px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
               >
                 View Details
               </Link>
@@ -81,7 +81,7 @@ export default function AllMembers() {
                 href={m.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full rounded-xl border border-[var(--primary)] bg-white px-4 py-2 text-center text-sm font-semibold text-[var(--primary)] transition hover:bg-gray-50"
+                className="w-full rounded-xl border border-(--primary) bg-white px-4 py-2 text-center text-sm font-semibold text-(--primary) transition hover:bg-gray-50"
               >
                 Facebook
               </a>
