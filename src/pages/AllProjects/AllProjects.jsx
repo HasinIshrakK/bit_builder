@@ -25,18 +25,18 @@ const AllProjects = () => {
   if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen">Loading projects...</p>;
 
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-screen">
       <h2 className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent py-8">
         Team Projects
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-3">
         {projects.map((project) => (
-          <div key={project._id} className="card bg-base-100  h-94 shadow-sm">
+          <div key={project._id} className="card bg-base-100 h-94 shadow-sm">
             <figure>
               <img src={project.image} alt={project.title} />
             </figure>
-            <div className="card-body bg-black">
+            <div className="card-body bg-[#1C072E]">
               <h2 className="card-title text-white">{project.title}</h2>
               <p className="text-gray-400">{project.description}</p>
               <div className="card-actions justify-end">

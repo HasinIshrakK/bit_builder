@@ -3,26 +3,50 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home/Home";
 import AllProjects from "../pages/AllProjects/AllProjects";
 import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
+import AllMembers from "../pages/AllMembers";
+import MemberDetails from "../pages/MemberDetails";
+import Contacts from "../pages/Contacts/Contacts";
+import Error from "../pages/Error/Error";
+import ErrorElement from "../pages/Error/ErrorElement";
 
 export const router = createBrowserRouter(
     [
         {
-            path:"/",
-            Component:RootLayout,
-            children:[
+            path: "/",
+            Component: RootLayout,
+            errorElement: <ErrorElement />,
+            children: [
                 {
-                    index:true,
-                    Component:Home
+                    index: true,
+                    Component: Home
                 },
                 {
-                    path:"/projects",
-                    Component:AllProjects
+                    path: "members",
+                    element: <AllMembers />,
                 },
                 {
-                    path:"/projects/:id",
-                    Component:ProjectDetails
+                    path: "members/:id",
+                    element: <MemberDetails />,
                 },
+                {
+                    path: "/projects",
+                    Component: AllProjects
+                },
+                {
+                    path: "/projects/:id",
+                    Component: ProjectDetails
+                },
+                {
+                    path: "/contact",
+                    Component: Contacts
+                },
+                {
+                    path: "/*",
+                    Component: Error
+                }
             ]
         }
     ]
 )
+
+
