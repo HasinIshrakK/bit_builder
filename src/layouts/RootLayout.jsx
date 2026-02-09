@@ -7,12 +7,10 @@ import Navbar from "../components/Navbar";
 const RootLayout = () => {
   return (
     <>
-      <main className="flex flex-col min-h-screen">
+      <main className="flex flex-col min-h-screen poppins">
         <Navbar />
         <div className="flex-1">
-          <Container>
-            <Outlet></Outlet>
-          </Container>
+          <Outlet></Outlet>
         </div>
         <Footer />
       </main>

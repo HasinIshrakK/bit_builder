@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="relative max-w-7xl mx-auto lg:px-0 px-6 py-12 md:py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Project Info */}
         <div>
-          <h2 className="text-2xl lg:text-3xl font-bold bg-linear-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent uppercase mb-4 md:mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-fuchsia-400 to-blue-500 uppercase mb-4 md:mb-6">
             Bit builder
           </h2>
           <p className="text-sm leading-relaxed text-gray-400">

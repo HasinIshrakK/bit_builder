@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[#1C072E] border-b border-purple-900/40">
+    <header className="sticky top-0 w-full z-50 bg-[#1C072E] border-b border-purple-900/40">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Mobile Logo */}
         <div className="md:hidden text-white text-2xl font-bold">
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex items-center justify-center">
             <Link
               to={"/"}
-              className="flex items-center justify-center rounded-full mt-6 text-purple-400 font-bold text-2xl lg:text-3xl bg-linear-to-r from-purple-400 to-fuchsia-500 bg-clip-text  mb-4 md:mb-6 uppercase"
+              className="flex items-center justify-center rounded-full mt-6 font-bold text-2xl lg:text-3xl text-transparent bg-clip-text bg-linear-to-r from-fuchsia-400 to-blue-500  mb-4 md:mb-6 uppercase"
             >
               Bit builder
             </Link>

@@ -45,7 +45,6 @@ const AllProjects = () => {
 
   useEffect(() => {
     setProjects(projectsData);
-    
   }, []);
 
   return (

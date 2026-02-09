@@ -7,24 +7,23 @@ import AllMembers from "../pages/AllMembers";
 import MemberDetails from "../pages/MemberDetails";
 import Contacts from "../pages/Contacts/Contacts";
 
-export const router = createBrowserRouter(
-    [
-        {
-            path:"/",
-            Component:RootLayout,
-            children:[
-                {
-                    index:true,
-                    Component:Home
-                },
-                {
-                    path:"/projects",
-                    Component:AllProjects
-                },
-                {
-                    path:"/projects/:id",
-                    Component:ProjectDetails
-                },
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: RootLayout,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "/projects",
+        Component: AllProjects,
+      },
+      {
+        path: "/projects/:id",
+        Component: ProjectDetails,
+      },
       {
         path: "members",
         element: <AllMembers />,
@@ -33,13 +32,10 @@ export const router = createBrowserRouter(
         path: "members/:id",
         element: <MemberDetails />,
       },
-                {
-                    path:"/contact",
-                    Component:Contacts
-                }
-            ]
-        }
-    ]
-)
-
-
+      {
+        path: "/contact",
+        Component: Contacts,
+      },
+    ],
+  },
+]);
