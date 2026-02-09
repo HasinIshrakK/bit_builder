@@ -1,7 +1,31 @@
 import { Link } from "react-router";
-import members from "../data/members.json";
+import { useEffect, useState } from "react";
+import useAxios from "../hooks/useAxios";
 
 export default function AllMembers() {
+
+  const [members, setMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const axiosInstance = useAxios();
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await axiosInstance.get("/members");
+        setMembers(response.data.data);
+      } catch (err) {
+        console.error("Failed to fetch members:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMembers();
+  }, [axiosInstance, members]);
+
+  if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen items-center flex justify-center">Loading Members Info...</p>;
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       {/* Header */}
@@ -71,7 +95,7 @@ export default function AllMembers() {
             {/* Buttons */}
             <div className="mt-6 flex gap-3">
               <Link
-                to={`/members/${m.id}`}
+                to={`/members/${m._id}`}
                 className="w-full rounded-xl border border-amber-50 px-4 py-2 text-center text-sm font-semibold text-white transition hover:opacity-90"
               >
                 View Details

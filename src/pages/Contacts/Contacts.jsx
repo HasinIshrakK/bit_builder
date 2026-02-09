@@ -22,9 +22,7 @@ export default function Contacts() {
         fetchMembers();
     }, [axiosInstance, members]);
 
-    {
-        loading && <span className="loading loading-spinner text-error"></span>
-    }
+  if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen items-center flex justify-center">Loading Contact Info...</p>;
 
     return (
         <div className="min-h-screen py-16 px-4 text-white">

@@ -22,7 +22,7 @@ const AllProjects = () => {
       .catch((err) => console.error(err));
   }, [page]);
 
-  if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen">Loading projects...</p>;
+  if (loading) return <p className="text-center text-3xl md:text-4xl font-semibold bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen items-center flex justify-center">Loading Projects...</p>;
 
   return (
     <div className="min-h-screen">

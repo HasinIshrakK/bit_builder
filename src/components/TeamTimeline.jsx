@@ -8,7 +8,7 @@ const TeamTimeline = () => {
       year: "2023",
       milestone: "The Genesis",
       description:
-        "টিম কবে শুরু? Started with 2 people in a small room with a big vision.",
+        "Started with 2 people in a small room with a big vision.",
       icon: <Flag className="w-6 h-6" />,
       color: "from-blue-600/20 to-cyan-400/20",
       border: "border-cyan-500/50",
@@ -74,7 +74,7 @@ const TeamTimeline = () => {
 
               {/* Card */}
               <div
-                className={`p-8 rounded-3xl border ${item.border} bg-gradient-to-br ${item.color} backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-3 ${item.glow}`}
+                className={`p-8 rounded-3xl border ${item.border} bg-linear-to-br ${item.color} backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-3 ${item.glow}`}
               >
                 <div className="mb-4 inline-block p-3 bg-white/5 rounded-2xl">
                   {item.icon}
