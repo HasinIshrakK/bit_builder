@@ -11,7 +11,7 @@ const Navbar = () => {
   const rightLinks = [
     { name: "Members", path: "/members" },
     { name: "Contact", path: "/contact" },
-    { name: "GitHub", path: "/gitHub" },
+    { name: "Book Now", path: "/booking" },
   ];
 
   return (

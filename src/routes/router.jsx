@@ -8,6 +8,8 @@ import MemberDetails from "../pages/MemberDetails";
 import Contacts from "../pages/Contacts/Contacts";
 import Error from "../pages/Error/Error";
 import ErrorElement from "../pages/Error/ErrorElement";
+import Booking from "../pages/Booking/Booking";
+import Skills from "../pages/Skills/Skills";
 
 export const router = createBrowserRouter(
     [
@@ -29,6 +31,9 @@ export const router = createBrowserRouter(
                     element: <MemberDetails />,
                 },
                 {
+                    path: "/skills",
+                    Component: Skills
+                }, {
                     path: "/projects",
                     Component: AllProjects
                 },
@@ -39,6 +44,9 @@ export const router = createBrowserRouter(
                 {
                     path: "/contact",
                     Component: Contacts
+                }, {
+                    path: "/booking",
+                    Component: Booking
                 },
                 {
                     path: "/*",

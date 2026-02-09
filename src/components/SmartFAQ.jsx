@@ -7,21 +7,21 @@ const SmartFAQ = () => {
 
   const faqs = [
     {
-      question: "আপনাদের টিম কি client work নেয়?",
+      question: "Do you take on client projects?",
       answer:
-        "হ্যাঁ, তবে আমরা limited projects নেই যেন quality compromise না হয়। We focus on depth, not just delivery.",
+        "Yes, but we work on a limited number of projects to ensure quality is never compromised. We focus on depth, not just delivery.",
       tag: "Services",
     },
     {
-      question: "Students কি join করতে পারে?",
+      question: "Can students join your team?",
       answer:
-        "অবশ্যই, learning mindset থাকলেই যথেষ্ট। আমরা ডিগ্রির চেয়ে আপনার শেখার আগ্রহকে বেশি গুরুত্ব দেই।",
+        "Absolutely. A strong learning mindset matters more to us than formal degrees. Curiosity and commitment come first.",
       tag: "Community",
     },
     {
       question: "How do you handle complex tech stacks?",
       answer:
-        "We don't chase trends. We choose the right tool for the specific problem to ensure long-term stability.",
+        "We don’t chase trends. We choose the right tools for the right problems to ensure long-term stability and maintainability.",
       tag: "Technical",
     },
   ];

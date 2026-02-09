@@ -21,7 +21,7 @@ const Banner = () => {
             <h1 className="text-5xl md:leading-14 text-cente font-bold  sm:text-5xl">
               <span className="text-transparent bg-clip-text bg-linear-to-r from-fuchsia-400 to-blue-500">
                 {" "}
-                Bit builder{" "}
+                BitBuilder{" "}
               </span>
               Collaborative Projects Crafted.
             </h1>

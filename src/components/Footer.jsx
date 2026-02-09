@@ -40,14 +40,19 @@ const Footer = () => {
             Useful Links
           </h3>
           <ul className="space-y-3.5 md:space-y-6 text-sm font-medium">
-            {["Home", "Members", "Projects", "Skills", "Contact"].map(
-              (item) => (
-                <li key={item}>
+            {[
+              { label: "Home", path: "/" },
+              { label: "Members", path: "/members" },
+              { label: "Projects", path: "/projects" },
+              { label: "Skills", path: "/skills" },
+              { label: "Contact", path: "/contact" },
+            ].map(({ label, path }) => (
+                <li key={label}>
                   <Link
-                    to={"/"}
+                    to={path}
                     className="hover:text-purple-400 transition duration-300"
                   >
-                    {item}
+                    {label}
                   </Link>
                 </li>
               ),
@@ -72,7 +77,7 @@ const Footer = () => {
               <Github size={20} />
             </Link>
           </div>
-          <ul className="space-y-3.5 md:space-y-6 text-sm">
+          <ul className="space-y-3.5 md:space-y-6 text-sm hidden md:block">
             <li>Email: team@portfolio.dev</li>
             <li>Discord: Team Workspace</li>
             <li>GitHub: team-portfolio</li>

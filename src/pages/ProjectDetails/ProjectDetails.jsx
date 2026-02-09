@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
-
   
   useEffect(()=>{
     
@@ -15,7 +14,7 @@ const ProjectDetails = () => {
 
   },[id])
 
-  if (!project) return <p className='text-center text-3xl md:text-4xl font-semibold   bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen'>Loading....</p>
+  if (!project) return <p className='text-center text-3xl md:text-4xl font-semibold bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent min-h-screen items-center flex justify-center'>Loading...</p>
 
   return (
     <div className=" flex items-center justify-center p-6 min-h-screen">
