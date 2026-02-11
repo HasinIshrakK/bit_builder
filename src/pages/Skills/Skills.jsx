@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "HTML", percentage: 90, strokeColor: "#30bae7" },
-  { name: "CSS", percentage: 85, strokeColor: "#d74680" },
-  { name: "JavaScript", percentage: 80, strokeColor: "#14a58c" },
-  { name: "React", percentage: 75, strokeColor: "#eb7d4b" },
-  { name: "Next.js", percentage: 70, strokeColor: "#98e039" },
-  { name: "Node.js", percentage: 65, strokeColor: "#11c037" },
-  { name: "MongoDB", percentage: 60, strokeColor: "#d83333" },
-  { name: "Firebase", percentage: 70, strokeColor: "#7a33d8" },
+  { name: "HTML", percentage: 90, strokeColor: "#30bae7", strokeCircle: "#85a5ad" },
+  { name: "CSS", percentage: 85, strokeColor: "#d74680" , strokeCircle: "#967180"},
+  { name: "JavaScript", percentage: 80, strokeColor: "#14a58c", strokeCircle: "#658983" },
+  { name: "React", percentage: 75, strokeColor: "#eb7d4b", strokeCircle: "#eb7d4b"},
+  { name: "Next.js", percentage: 70, strokeColor: "#98e039", strokeCircle: "" },
+  { name: "Node.js", percentage: 65, strokeColor: "#11c037", strokeCircle: ""},
+  { name: "MongoDB", percentage: 60, strokeColor: "#d83333", strokeCircle:  ""},
+  { name: "Firebase", percentage: 70, strokeColor: "#7a33d8", strokeCircle:  ""},
 ];
 
 const radius = 35;
@@ -17,9 +17,9 @@ const circumference = 2 * Math.PI * radius;
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 bg-[#1c072e] text-center "> 
+    <section className="py-20 bg-[#1c072e] text-center #1c072e"> 
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-4">WE GOT SKILLS</h2>
+        <h2 className="text-4xl font-bold mb-4 bg-[#85a5ad]">WE GOT SKILLS</h2>
         <p className="text-white mb-16 max-w-2xl mx-auto">
           Our team has strong expertise in modern web technologies.
         </p>
@@ -49,7 +49,7 @@ const SkillsSection = () => {
                     cx="40"
                     cy="40"
                     r={radius}
-                    stroke="#e5e7eb"
+                    stroke={skill.strokeCircle}
                     strokeWidth="9"
                     fill="transparent"
                   />
@@ -69,7 +69,7 @@ const SkillsSection = () => {
                     transition={{
                       repeat: Infinity,
                       repeatType: "reverse", // 0 → percentage → 0
-                      duration: 1.5,
+                      duration: 3,
                       ease: "linear",
                     }}
                   />
