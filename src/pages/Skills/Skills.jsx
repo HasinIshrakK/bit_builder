@@ -7,9 +7,9 @@ const skills = [
   { name: "JavaScript", percentage: 80, strokeColor: "#14a58c" },
   { name: "React", percentage: 75, strokeColor: "#eb7d4b" },
   { name: "Next.js", percentage: 70, strokeColor: "#98e039" },
-  { name: "Node.js", percentage: 65, strokeColor: "#eb7d4b" },
-  { name: "MongoDB", percentage: 60, strokeColor: "#30bae7" },
-  { name: "Firebase", percentage: 70, strokeColor: "#eb7d4b" },
+  { name: "Node.js", percentage: 65, strokeColor: "#11c037" },
+  { name: "MongoDB", percentage: 60, strokeColor: "#d83333" },
+  { name: "Firebase", percentage: 70, strokeColor: "#7a33d8" },
 ];
 
 const radius = 35;
@@ -17,7 +17,7 @@ const circumference = 2 * Math.PI * radius;
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 bg-[#bce039] text-center #1c072e"> 
+    <section className="py-20 bg-[#1c072e] text-center "> 
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold mb-4">WE GOT SKILLS</h2>
         <p className="text-white mb-16 max-w-2xl mx-auto">
@@ -36,7 +36,7 @@ const SkillsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className={`flex flex-col items-center p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105 bg-[#200b33] `}
+                className="flex flex-col items-center p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 hover:scale-105 bg-[#200b33]"
               >
                 <svg
                   width="120"
@@ -50,24 +50,28 @@ const SkillsSection = () => {
                     cy="40"
                     r={radius}
                     stroke="#e5e7eb"
-                    strokeWidth="8" // বড় করা হলো
+                    strokeWidth="9"
                     fill="transparent"
                   />
 
+                  {/* Animated Circle */}
                   <motion.circle
                     cx="40"
                     cy="40"
                     r={radius}
                     stroke={skill.strokeColor}
-                    strokeWidth="8" // animation circle এর width বাড়ানো হলো
+                    strokeWidth="9"
                     fill="transparent"
                     strokeDasharray={circumference}
-                    strokeDashoffset={offset}
+                    strokeDashoffset={circumference} // start empty
                     strokeLinecap="round"
-                    initial={{ strokeDashoffset: circumference }}
-                    whileInView={{ strokeDashoffset: offset }}
-                    transition={{ duration: 1.5 }}
-                    viewport={{ once: true }}
+                    animate={{ strokeDashoffset: [circumference, offset] }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "reverse", // 0 → percentage → 0
+                      duration: 1.5,
+                      ease: "linear",
+                    }}
                   />
                 </svg>
 
