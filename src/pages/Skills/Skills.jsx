@@ -2,14 +2,54 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "HTML", percentage: 90, strokeColor: "#30bae7", strokeCircle: "#85a5ad" },
-  { name: "CSS", percentage: 85, strokeColor: "#d74680" , strokeCircle: "#967180"},
-  { name: "JavaScript", percentage: 80, strokeColor: "#14a58c", strokeCircle: "#658983" },
-  { name: "React", percentage: 75, strokeColor: "#eb7d4b", strokeCircle: "#eb7d4b"},
-  { name: "Next.js", percentage: 70, strokeColor: "#98e039", strokeCircle: "" },
-  { name: "Node.js", percentage: 65, strokeColor: "#11c037", strokeCircle: ""},
-  { name: "MongoDB", percentage: 60, strokeColor: "#d83333", strokeCircle:  ""},
-  { name: "Firebase", percentage: 70, strokeColor: "#7a33d8", strokeCircle:  ""},
+  {
+    name: "HTML",
+    percentage: 90,
+    strokeColor: "#30bae7",
+    strokeCircle: "#a6d4e4",
+  },
+  {
+    name: "CSS",
+    percentage: 85,
+    strokeColor: "#d74680",
+    strokeCircle: "#d392ac",
+  },
+  {
+    name: "JavaScript",
+    percentage: 75,
+    strokeColor: "#14a58c",
+    strokeCircle: "#7ea59f",
+  },
+  {
+    name: "React",
+    percentage: 80,
+    strokeColor: "#eb7d4b",
+    strokeCircle: "#ecc7b6",
+  },
+  {
+    name: "Next.js",
+    percentage: 70,
+    strokeColor: "#98e039",
+    strokeCircle: "#546939",
+  },
+  {
+    name: "Node.js",
+    percentage: 65,
+    strokeColor: "#11c037",
+    strokeCircle: "#77b485",
+  },
+  {
+    name: "MongoDB",
+    percentage: 65,
+    strokeColor: "#d83333",
+    strokeCircle: "#d47d7d",
+  },
+  {
+    name: "Firebase",
+    percentage: 80,
+    strokeColor: "#7a33d8",
+    strokeCircle: "#a27bd4",
+  },
 ];
 
 const radius = 35;
@@ -17,9 +57,9 @@ const circumference = 2 * Math.PI * radius;
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 bg-[#1c072e] text-center #1c072e"> 
+    <section className="py-20 bg-[#1c072e] text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-4 bg-[#85a5ad]">WE GOT SKILLS</h2>
+        <h2 className="text-4xl font-bold mb-4">WE GOT SKILLS</h2>
         <p className="text-white mb-16 max-w-2xl mx-auto">
           Our team has strong expertise in modern web technologies.
         </p>
@@ -63,20 +103,20 @@ const SkillsSection = () => {
                     strokeWidth="9"
                     fill="transparent"
                     strokeDasharray={circumference}
-                    strokeDashoffset={circumference} // start empty
-                    strokeLinecap="round"
-                    animate={{ strokeDashoffset: [circumference, offset] }}
+                    initial={{ strokeDashoffset: circumference }}
+                    animate={{ strokeDashoffset: offset }}
                     transition={{
-                      repeat: Infinity,
-                      repeatType: "reverse", // 0 → percentage → 0
                       duration: 3,
                       ease: "linear",
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      repeatDelay: 1,
                     }}
                   />
                 </svg>
 
                 {/* Percentage Text */}
-                <div className="-mt-20 text-xl font-bold text-white">
+                <div className="-mt-19  text-xl font-bold text-white">
                   {skill.percentage}%
                 </div>
 
@@ -84,7 +124,7 @@ const SkillsSection = () => {
                   {skill.name}
                 </h3>
               </motion.div>
-            );
+            ); 
           })}
         </div>
       </div>
