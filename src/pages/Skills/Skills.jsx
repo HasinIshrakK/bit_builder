@@ -115,16 +115,56 @@ const SkillsSection = () => {
                   />
                 </svg>
 
+                
                 {/* Percentage Text */}
-                <div className="-mt-19  text-xl font-bold text-white">
+                <motion.div
+                  className="-mt-19 text-xl font-bold"
+                  animate={{
+                    color: [
+                      "#a6d4e4",
+                      "#d392ac",
+                      "#7ea59f",
+                      "#ecc7b6",
+                      "#546939",
+                      "#77b485",
+                      "#d47d7d",
+                      "#a27bd4",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
                   {skill.percentage}%
-                </div>
+                </motion.div>
 
-                <h3 className="mt-14 text-lg font-semibold text-white">
+                {/* Skills Text */}
+                <motion.h3
+                  className="mt-14 text-lg font-semibold"
+                  animate={{
+                    color: [
+                      "#a6d4e4",
+                      "#d392ac",
+                      "#7ea59f",
+                      "#ecc7b6",
+                      "#546939",
+                      "#77b485",
+                      "#d47d7d",
+                      "#a27bd4",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
                   {skill.name}
-                </h3>
+                </motion.h3>
               </motion.div>
-            ); 
+            );
           })}
         </div>
       </div>
