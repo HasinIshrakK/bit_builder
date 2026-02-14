@@ -10,51 +10,55 @@ import Error from "../pages/Error/Error";
 import ErrorElement from "../pages/Error/ErrorElement";
 import Booking from "../pages/Booking/Booking";
 import Skills from "../pages/Skills/Skills";
+import ScrollToTop from "../components/ScrollToTop";
 
-export const router = createBrowserRouter(
-    [
-        {
-            path: "/",
-            Component: RootLayout,
-            errorElement: <ErrorElement />,
-            children: [
-                {
-                    index: true,
-                    Component: Home
-                },
-                {
-                    path: "members",
-                    element: <AllMembers />,
-                },
-                {
-                    path: "members/:id",
-                    element: <MemberDetails />,
-                },
-                {
-                    path: "/skills",
-                    Component: Skills
-                }, {
-                    path: "/projects",
-                    Component: AllProjects
-                },
-                {
-                    path: "/projects/:id",
-                    Component: ProjectDetails
-                },
-                {
-                    path: "/contact",
-                    Component: Contacts
-                }, {
-                    path: "/booking",
-                    Component: Booking
-                },
-                {
-                    path: "/*",
-                    Component: Error
-                }
-            ]
-        }
-    ]
-)
-
-
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <ScrollToTop />
+        <RootLayout />
+      </>
+    ),
+    errorElement: <ErrorElement />,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "members",
+        element: <AllMembers />,
+      },
+      {
+        path: "members/:id",
+        element: <MemberDetails />,
+      },
+      {
+        path: "/skills",
+        Component: Skills,
+      },
+      {
+        path: "/projects",
+        Component: AllProjects,
+      },
+      {
+        path: "/projects/:id",
+        Component: ProjectDetails,
+      },
+      {
+        path: "/contact",
+        Component: Contacts,
+      },
+      {
+        path: "/booking",
+        Component: Booking,
+      },
+      {
+        path: "/*",
+        Component: Error,
+      },
+    ],
+  },
+]);

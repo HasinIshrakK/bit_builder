@@ -7,8 +7,7 @@ const TeamTimeline = () => {
     {
       year: "2023",
       milestone: "The Genesis",
-      description:
-        "Started with 2 people in a small room with a big vision.",
+      description: "Started with 2 people in a small room with a big vision.",
       icon: <Flag className="w-6 h-6" />,
       color: "from-blue-600/20 to-cyan-400/20",
       border: "border-cyan-500/50",
@@ -51,7 +50,7 @@ const TeamTimeline = () => {
       <Container>
         {/* Header */}
         <SectionTitle
-          title={"Our Journey "}
+          title={"Our Journey"}
           subTitle={
             "From a spark of an idea to a global tech force. Here is how we grew."
           }

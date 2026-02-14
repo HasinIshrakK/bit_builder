@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 
 const Banner = () => {
   return (
-    <section className="text-white bg-[#1c072e]">
+    <section className="text-white bg-[#1c072e] rounded-4xl mt-10 md:mt-16">
       <Container>
         <div className="flex flex-col justify-center gap-5 mx-auto sm:py-12 lg:py-20 lg:flex-row lg:justify-between">
           <div className="flex items-center justify-center">
